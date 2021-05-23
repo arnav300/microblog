@@ -6,7 +6,7 @@ before_install:
     - docker build -t arnav30/microblog:2.0 -f ./Dockerfile.dev .
 
 script:
-  - 
+  - docker run -e CI=true arnav30/microblog tests.py
 
 after_success:
   - docker build -t arnav30/microblog:2.0 ./
